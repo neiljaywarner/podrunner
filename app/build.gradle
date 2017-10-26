@@ -124,7 +124,7 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+            //signingConfig signingConfigs.release
         }
     }
     // http://stackoverflow.com/questions/22851103/android-studio-gradle-error-multiple-dex-files-define
