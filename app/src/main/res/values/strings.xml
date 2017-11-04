@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">SoundWaves</string>
+    <!-- TODO: Make GPL clear -->
+
+    <!--
+    3-Nov-2017
+    modifying from Soundwaves app with extreme gratitude
+    source on github -->
+    <string name="app_name">Podrunner</string>
     <string name="unsubscribe">Unsubscribe</string>
     <string name="pref_only_wifi_description">Wait until connected to Wi-Fi to download files</string>
     <string name="pref_refresh_only_wifi_description">Restrict feeds from refreshing in the background</string>
@@ -23,7 +29,7 @@
     <string name="hello_world">Hello World!</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_downloading">Download Manager</string>
-    <string name="title_activity_swipe">SoundWaves</string>
+    <string name="title_activity_swipe">Podrunner</string>
     <string name="menu_download_all">Bulk download</string>
     <string name="menu_clear_playlist">Reset playlist</string>
     <string name="menu_import">Import/export OPML</string>

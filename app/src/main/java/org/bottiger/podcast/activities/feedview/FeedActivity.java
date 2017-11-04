@@ -233,8 +233,9 @@ public class FeedActivity extends TopActivity {
 
         ActionBar actionbar = getSupportActionBar();
         if (actionbar != null) {
-            actionbar.setDisplayHomeAsUpEnabled(true);
-            actionbar.setHomeButtonEnabled(true);
+            // TODO: mutate this screen to navigation drawer per spec.
+            //actionbar.setDisplayHomeAsUpEnabled(true);
+            //actionbar.setHomeButtonEnabled(true);
         }
 
         mHasAlreadyBeenOpened = savedInstanceState != null;

@@ -1,5 +1,6 @@
 package org.bottiger.podcast;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -9,9 +10,11 @@ import android.os.Bundle;
 import android.os.Debug;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ProgressBar;
 
 import org.bottiger.podcast.activities.feedview.FeedActivity;
 import org.bottiger.podcast.activities.intro.Intro;
@@ -28,7 +31,7 @@ import org.bottiger.podcast.views.dialogs.DialogAddPodcast;
 import java.io.IOException;
 
 // Sliding
-public class MainActivity extends FragmentContainerActivity {
+public class MainActivity extends AppCompatActivity {
 
 	private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -49,10 +52,19 @@ public class MainActivity extends FragmentContainerActivity {
 
 		boolean firstRun = SoundWaves.getAppContext(this).IsFirstRun();
 
-		if (firstRun && !showIntro) {
+		if (firstRun) {
+			Log.d("NJW", " FIRST RUN, time to subscribe");
 			SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 			final Subscription subscription = new Subscription(sharedPreferences, "http://podrunner.wm.wizzard.tv/rss");
 			SoundWaves.getAppContext(this).getLibraryInstance().subscribe(subscription);
+			ProgressDialog progressDialog = ProgressDialog.show(this, "Setting up", "Setting up podrunner");
+			progressDialog.show();
+			try {
+				Thread.sleep(7000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			progressDialog.dismiss();
 
 		}
 		ISubscription openSubscription =
