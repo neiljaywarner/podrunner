@@ -27,10 +27,11 @@ android {
     buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "org.bottiger.podcast"
+        // TODO: Fix controls so this can change.
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 391        // even - release. Odd - development
-        versionName "0.158.11" // even - release. Odd - development
+        versionCode 2
+        versionName "0.11" // version 0.11 first version.. to show james
         multiDexEnabled = true
 
         vectorDrawables.useSupportLibrary = true
