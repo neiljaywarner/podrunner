@@ -256,6 +256,7 @@ dependencies {
     }
     // Free version
     // Amazon version
+    /*
     amazonCompile fileTree(dir: 'src/amazon/libs', include: ['*.jar'])
     amazonCompile "com.google.android.gms:play-services-cast:$playServicesVersion"
     amazonCompile "com.google.android.gms:play-services-cast-framework:$playServicesVersion"
@@ -273,8 +274,9 @@ dependencies {
     googleCompile "com.google.firebase:firebase-core:$playServicesVersion"
     googleCompile "com.google.firebase:firebase-messaging:$playServicesVersion"
     googleCompile "com.google.firebase:firebase-database:$playServicesVersion"
+    */
     // google cast
     compile project(':soundwavescommon')
 }
 
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'
