@@ -127,28 +127,28 @@ public class EpisodeViewHolder extends FeedViewHolder {
 
     private void setStateExpanded(boolean argCanDownload) {
         setTextColor(false);
-        setButtonsVisibility(argCanDownload, true);
+        //setButtonsVisibility(argCanDownload, true);
         setDescriptionLength(LONG);
         setIsRecyclable(false);
     }
 
     private void setStateCollapsed(boolean argCanDownload) {
         setTextColor(false);
-        setButtonsVisibility(argCanDownload, false);
+        //setButtonsVisibility(argCanDownload, false);
         setDescriptionLength(GONE);
         setIsRecyclable(true);
     }
 
     private void setStateCollapsedWithDescription(boolean argCanDownload) {
         setTextColor(false);
-        setButtonsVisibility(argCanDownload, true);
+        //setButtonsVisibility(argCanDownload, true);
         setDescriptionLength(SHORT);
         setIsRecyclable(true);
     }
 
     private void setStateListenedCollapsed(boolean argCanDownload) {
         setTextColor(true);
-        setButtonsVisibility(argCanDownload, false);
+        //setButtonsVisibility(argCanDownload, false);
         setDescriptionLength(GONE);
         setIsRecyclable(true);
     }

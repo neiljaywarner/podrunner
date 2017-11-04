@@ -180,6 +180,10 @@ public class FeedActivity extends TopActivity {
         mRevealLayout = (FrameLayout) findViewById(R.id.feed_activity_settings_container);
         mRecyclerView = (FeedRecyclerView) findViewById(R.id.feed_recycler_view);
 
+        mFloatingButton.setVisibility(View.INVISIBLE);
+        //NJW for version 0.11
+        // TODO: At least figure out intro skip soon.
+
         setViewState(mSubscription);
 
         if (mSubscription instanceof Subscription) {
@@ -212,6 +216,8 @@ public class FeedActivity extends TopActivity {
             mMultiShrinkScroller.setLayoutParams(params);
         }
 
+        mFloatingButton.setVisibility(View.INVISIBLE);
+        //version 0.11 hiding settings, figure out intro skip later
         mFloatingButton.setOnClickListener(getFloatingOnClickListener());
 
         setBackgroundImage(mSubscription);
@@ -410,12 +416,14 @@ public class FeedActivity extends TopActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        /*
         getMenuInflater().inflate(R.menu.feedview, menu);
 
         final MenuItem myActionMenuItem = menu.findItem( R.id.action_search);
         final SearchView searchView = (SearchView) myActionMenuItem.getActionView();
         searchView.setOnQueryTextListener(mOnQueryTextListener);
-
+*/
+        // NJW v 0.11 disabling menu to not generate questions from it.
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -704,6 +712,7 @@ public class FeedActivity extends TopActivity {
                     mRevealAnimator.start();
                 } else {
                     // Open Settings
+
                     mMultiShrinkScroller.expandHeader();
                     mRevealAnimator =
                             ViewAnimationUtils.createCircularReveal(mRevealLayout, cx, cy, 0, revealRadius);
@@ -714,6 +723,7 @@ public class FeedActivity extends TopActivity {
                     setFABDrawable(R.drawable.ic_clear_white);
                     mToolbar.setTitle(R.string.menu_settings);
                     mRevealAnimator.start();
+
                 }
                 mSettingsRevealed = !mSettingsRevealed;
             }
