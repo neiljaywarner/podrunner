@@ -712,7 +712,7 @@ public class FeedActivity extends TopActivity {
                     mRevealAnimator.start();
                 } else {
                     // Open Settings
-
+                    /*
                     mMultiShrinkScroller.expandHeader();
                     mRevealAnimator =
                             ViewAnimationUtils.createCircularReveal(mRevealLayout, cx, cy, 0, revealRadius);
@@ -723,9 +723,10 @@ public class FeedActivity extends TopActivity {
                     setFABDrawable(R.drawable.ic_clear_white);
                     mToolbar.setTitle(R.string.menu_settings);
                     mRevealAnimator.start();
+                    */
 
                 }
-                mSettingsRevealed = !mSettingsRevealed;
+                //mSettingsRevealed = !mSettingsRevealed;
             }
         };
     }

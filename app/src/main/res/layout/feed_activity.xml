@@ -36,8 +36,8 @@
 
     <org.bottiger.podcast.views.FloatingActionButton
         android:id="@+id/feedview_fap_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_gravity="right"
         android:layout_marginRight="40dp"
         android:src="@drawable/ic_tune_white"/>
