@@ -161,6 +161,8 @@ public class DiscoverySearchAdapter extends RecyclerView.Adapter<SearchResultVie
                                                       @NonNull ISubscription argSubscription) {
         final URL url = argSubscription.getURL();
         final boolean isSubscribed = mSubscribedUrls.contains(url);
+        Log.e("NJW", "url when subscribing:" + url.toExternalForm());
+        Log.e("NJW", "tostring" + url.toString());
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(mActivity);
         final Subscription subscription = new Subscription(sharedPreferences, url.toString());
         if (isSubscribed) {

@@ -13,9 +13,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import org.bottiger.podcast.activities.feedview.FeedActivity;
 import org.bottiger.podcast.activities.intro.Intro;
 import org.bottiger.podcast.debug.SqliteCopy;
 import org.bottiger.podcast.flavors.CrashReporter.VendorCrashReporter;
+import org.bottiger.podcast.provider.ISubscription;
+import org.bottiger.podcast.provider.Subscription;
 import org.bottiger.podcast.receiver.HeadsetReceiver;
 import org.bottiger.podcast.utils.PreferenceHelper;
 import org.bottiger.podcast.utils.TransitionUtils;
@@ -43,19 +46,20 @@ public class MainActivity extends FragmentContainerActivity {
 		Log.v(TAG, "App start time: " + System.currentTimeMillis());
 		super.onCreate(savedInstanceState);
 
-		/*
+
 		boolean firstRun = SoundWaves.getAppContext(this).IsFirstRun();
 
 		if (firstRun && !showIntro) {
-			VendorCrashReporter.report("ShowWrongIntro", "Something is wrong");
-		}
+			SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+			final Subscription subscription = new Subscription(sharedPreferences, "http://podrunner.wm.wizzard.tv/rss");
+			SoundWaves.getAppContext(this).getLibraryInstance().subscribe(subscription);
 
-		if (firstRun && showIntro) {
-			showIntro = false;
-			Intent intent = new Intent(MainActivity.this, Intro.class);
-			startActivity(intent);
 		}
-		*/
+		ISubscription openSubscription =
+				SoundWaves.getAppContext(this).getLibraryInstance().getSubscription("http://podrunner.wm.wizzard.tv/rss");
+		FeedActivity.start(this, openSubscription);
+
+
 
 		prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		incrementAppStarts(this, prefs);
@@ -67,14 +71,6 @@ public class MainActivity extends FragmentContainerActivity {
 			// Tracing is buggy on emulator
 			Debug.startMethodTracing("calc");
 
-		}
-
-		if (BuildConfig.DEBUG && false) {
-			try {
-				SqliteCopy.backupDatabase();
-			} catch (IOException e) { // TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		}
 
 

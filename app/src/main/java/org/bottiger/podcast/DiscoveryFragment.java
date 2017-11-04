@@ -187,7 +187,7 @@ public class DiscoveryFragment extends Fragment implements SharedPreferences.OnS
 
                 for (int i = 0; i < ENGINE_IDS.length; i++) {
                     @SearchEngine int id = ENGINE_IDS[i];
-                    if (isEnabled(id, getContext())) {
+                    if (id == 1) {
                         ids.add(id);
                         res.add(ENGINE_RES[i]);
                     }
@@ -267,6 +267,8 @@ public class DiscoveryFragment extends Fragment implements SharedPreferences.OnS
                         Log.d(TAG, "error: " + throwable.toString());
                     }
                 });
+
+        performSearch("podrunner");
     }
 
     @Override
@@ -281,6 +283,7 @@ public class DiscoveryFragment extends Fragment implements SharedPreferences.OnS
         if (TextUtils.isEmpty(argQuery))
             return;
 
+        Log.e("NJW", "performsearch: podrunner:" + argQuery);
         updateSpinnerValues(SEARCH_RESULTS, argQuery);
 
         ISearchParameters searchParameters = new GenericSearchParameters();
