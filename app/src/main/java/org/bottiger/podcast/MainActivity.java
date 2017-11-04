@@ -43,6 +43,7 @@ public class MainActivity extends FragmentContainerActivity {
 		Log.v(TAG, "App start time: " + System.currentTimeMillis());
 		super.onCreate(savedInstanceState);
 
+		/*
 		boolean firstRun = SoundWaves.getAppContext(this).IsFirstRun();
 
 		if (firstRun && !showIntro) {
@@ -54,6 +55,7 @@ public class MainActivity extends FragmentContainerActivity {
 			Intent intent = new Intent(MainActivity.this, Intro.class);
 			startActivity(intent);
 		}
+		*/
 
 		prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		incrementAppStarts(this, prefs);

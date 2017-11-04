@@ -9,6 +9,7 @@ import android.content.res.Resources;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 
 import org.bottiger.podcast.R;
@@ -108,6 +109,7 @@ public class Subscription extends BasePodcastSubscription {
 	public Subscription(@NonNull SharedPreferences argSharedPreferences, String url_link) {
 		this(argSharedPreferences);
 		mUrlString = url_link;
+		Log.e("NJW", "url link=" + url_link);
 		mTitle = url_link;
 		mLink = url_link;
 		init();
