@@ -17,7 +17,6 @@
         android:layout_height="match_parent">
 
     <com.github.ivbaranov.mfb.MaterialFavoriteButton
-        xmlns:custom="http://schemas.android.com/apk/res/org.bottiger.podcast"
         android:id="@+id/favorite"
         android:layout_width="48dp"
         android:layout_height="48dp"
@@ -26,11 +25,11 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        custom:mfb_animate_favorite="true"
-        custom:mfb_favorite_image="@drawable/ic_favorite_24dp"
-        custom:mfb_not_favorite_image="@drawable/ic_favorite_outline_24dp"
-        custom:mfb_rotation_duration="100"
-        custom:mfb_bounce_duration="150"
+        app:mfb_animate_favorite="true"
+        app:mfb_favorite_image="@drawable/ic_favorite_24dp"
+        app:mfb_not_favorite_image="@drawable/ic_favorite_outline_24dp"
+        app:mfb_rotation_duration="100"
+        app:mfb_bounce_duration="150"
         android:visibility="gone"
         />
 
